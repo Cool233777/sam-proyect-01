@@ -94,7 +94,7 @@ Resources:
   # \___ \ / _ \| | | | '__/ __/ _ \
   #   ___) | (_) | |_| | | | (_|  __/
   # |____/ \___/ \__,_|_|  \___\___|
-  CodeStarConnection:
+  CodeStarConnection2:
     Condition: CreateConnection
     Type: AWS::CodeStarConnections::Connection
     Properties:
@@ -125,7 +125,7 @@ Resources:
                 Provider: CodeStarSourceConnection
                 Version: "1"
               Configuration:
-                ConnectionArn: !If [CreateConnection, !Ref CodeStarConnection, !Ref CodeStarConnectionArn]
+                ConnectionArn: !If [CreateConnection, !Ref CodeStarConnection2, !Ref CodeStarConnectionArn]
                 FullRepositoryId: !Ref FullRepositoryId
                 BranchName: !If [IsFeatureBranchPipeline, !Ref FeatureGitBranch, !Ref MainGitBranch]
               OutputArtifacts:
@@ -392,7 +392,7 @@ Resources:
               - Effect: Allow
                 Action:
                   - "codestar-connections:UseConnection"
-                Resource: !If [CreateConnection, !Ref CodeStarConnection, !Ref CodeStarConnectionArn]
+                Resource: !If [CreateConnection, !Ref CodeStarConnection2, !Ref CodeStarConnectionArn]
         - PolicyName: CodePipelineCodeAndS3Bucket
           PolicyDocument:
             Version: "2012-10-17"
@@ -647,4 +647,4 @@ Outputs:
   CodeStarConnectionArn:
     Condition: CreateConnection
     Description: The Arn of AWS CodeStar Connection used to connect to external code repositories.
-    Value: !Ref CodeStarConnection
+    Value: !Ref CodeStarConnection2
