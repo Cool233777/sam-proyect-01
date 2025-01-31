@@ -157,8 +157,12 @@ Resources:
           Resource: !Join ['', ['arn:aws:s3:::', !Ref WebSiteBucket, /*]]
           Condition:
             StringEquals:
-              AWS:SourceArn: !Join ['', ['arn:aws:cloudfront::', !Ref "AWS::AccountId",
-                  :distribution/, !Ref CloudFrontDistribution]]
+              AWS:SourceArn: !Join
+                - ''
+                - - 'arn:aws:cloudfront::'
+                  - !Ref 'AWS::AccountId'
+                  - ':distribution/'
+                  - !Ref 'CloudFrontDistribution'
   # CloudFront Distribution for hosting the single page app website
   CloudFrontDistribution:
     Type: AWS::CloudFront::Distribution

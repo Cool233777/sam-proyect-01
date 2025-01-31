@@ -15,7 +15,13 @@ lint = true
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
-resolve_s3 = true
+resolve_s3 = false
+stack_name = "stackPipeline01"
+s3_bucket = "samapp-1081718v3"  # Aquí pones el nombre de tu bucket S3
+s3_prefix = "stackPipeline01"
+region = "us-east-1"
+disable_rollback = true
+image_repositories = []
 
 [default.package.parameters]
 resolve_s3 = true
