@@ -47,10 +47,10 @@ Parameters:
     Default: "pipeline01"
   TestingPipelineExecutionRole:
     Type: String
-    Default: "pipeline01"
+    Default: ""
   TestingCloudFormationExecutionRole:
     Type: String
-    Default: "pipeline01"
+    Default: ""
   TestingArtifactBucket:
     Type: String
     Default: "pipeline01"
@@ -65,10 +65,10 @@ Parameters:
     Default: "pipeline01st2"
   ProdPipelineExecutionRole:
     Type: String
-    Default: "pipeline01st2"
+    Default: ""
   ProdCloudFormationExecutionExeRole:
     Type: String
-    Default: "pipeline01st2"
+    Default: ""
   ProdArtifactBucket:
     Type: String
     Default: "pipeline01st2"
