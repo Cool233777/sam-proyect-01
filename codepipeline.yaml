@@ -32,7 +32,7 @@ Parameters:
     Default: "GitHub"
   FullRepositoryId:
     Type: String
-    Default: "github.com/cool233777/sam-proyect-01"
+    Default: "github.com/Cool233777/sam-proyect-01"
   MainGitBranch:
     Type: String
     Default: "main"
