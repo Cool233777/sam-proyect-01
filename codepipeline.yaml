@@ -56,7 +56,7 @@ Parameters:
     Default: "pipeline01"
   TestingImageRepository:
     Type: String
-    Default: "pipeline01"
+    Default: ""
   ProdRegion:
     Type: String
     Default: "us-east-1"
@@ -74,7 +74,7 @@ Parameters:
     Default: "pipeline01st2"
   ProdImageRepository:
     Type: String
-    Default: "pipeline01st2"
+    Default: ""
   # CodeStarConnectionArn and FeatureGitBranch are required for pipelines for feature branches
   CodeStarConnectionArn:
     Type: String
